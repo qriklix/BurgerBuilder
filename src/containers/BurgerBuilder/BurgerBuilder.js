@@ -10,6 +10,8 @@ import Spinner from '../../components/Ui/Spinner/Spinner';
 
 import axios from '../../axios-orders';
 
+import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
+
 const INGREADIENT_PRICES = {
     salad: 0.5,
     cheese: 0.4,
@@ -158,4 +160,4 @@ class BurgerBuilder extends Component {
     }
 }
 
-export default BurgerBuilder;
+export default withErrorHandler(BurgerBuilder, axios);
